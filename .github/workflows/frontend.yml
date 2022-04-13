@@ -16,8 +16,11 @@ jobs:
         node-version: '16'
     - name: Install requirements
       run: npm install
-    - name: Run tests and collect coverage
-      env:
-        CODECOV_TOKEN: '82174146-945e-4661-83d5-fc52e91a7a4a'
-        
+    - name: Run tests and collect coverage   
       run: npm run test
+      
+    - name: "Upload coverage to Codecov"
+      uses: codecov/codecov-action@v2
+      with:
+        fail_ci_if_error: true
+        token: '82174146-945e-4661-83d5-fc52e91a7a4a'
