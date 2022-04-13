@@ -14,4 +14,9 @@ jobs:
     - name: Install requirements
       run: pip install -r api/requirements.txt
     - name: Run tests and collect coverage
-      run: coverage run --source=api -m pytest
+      run: coverage run --source=api -m pytest &&  coverage xml
+    - name: "Upload coverage to Codecov"
+      uses: codecov/codecov-action@v2
+      with:
+        fail_ci_if_error: true
+        token: "82174146-945e-4661-83d5-fc52e91a7a4a"
