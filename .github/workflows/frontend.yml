@@ -17,4 +17,7 @@ jobs:
     - name: Install requirements
       run: npm install
     - name: Run tests and collect coverage
+      env:
+        CODECOV_TOKEN: '82174146-945e-4661-83d5-fc52e91a7a4a'
+        
       run: npm run test
