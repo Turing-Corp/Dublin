@@ -7,6 +7,9 @@ from calculator import Calculator
 
 app = Flask(__name__)
 
+def something():
+    "something"
+    
 @app.route('/api/add', methods=['POST'])
 def add():
     return operation('add', 2)
